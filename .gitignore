@@ -1,0 +1,11 @@
+#ignore node_modules folder
+node_modules
+
+#ignore bin folder
+bin
+
+#ignore data folder
+data
+
+#ignore data folder
+uploads

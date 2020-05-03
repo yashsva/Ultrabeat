@@ -1,0 +1,779 @@
+.body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:#1e1e30;
+  
+}
+
+.footer
+{
+	color: white;
+	padding:40px;
+	bottom:0px;
+	text-align:center;
+	text-shadow: 0px 8px 8px black;
+	background-color:black;
+	box-shadow: 0px 8px 20px #007bff;
+	letter-spacing:1px;
+}
+
+h2 {
+	margin:0 0 .5em 0;
+	padding: 20px;
+	color: #007bff;
+	text-shadow: 0px 8px 8px black;
+}
+h3
+{
+	margin: 0 0 .5em 0;
+    padding: 20px;
+    color: white;
+    text-shadow: 0px 8px 8px #007bff;
+}
+h1 {
+	
+	padding: 20px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-shadow: 0px 8px 8px black;
+	color: #007bff;
+}
+
+p{
+	padding: 20px;
+	color: #007bff;
+	text-shadow: 0px 8px 8px black;
+}
+
+.a {
+  color: white;
+  padding: 20px;
+}
+a{
+	padding: 20px;
+	text-shadow: 0px 8px 8px black;
+
+}
+a:hover
+{
+	text-decoration: none;
+}
+#wrapper {
+	display: none;
+	position:relative;
+	width:100%;
+	padding: 20px;
+}
+
+
+#audioList {
+	width:100%;
+	box-shadow: 0px 5px 30px black;
+}
+	#audioList table {
+		border-collapse:separate;
+		border-spacing:1px;
+		
+		width:100%;
+	}
+		#audioList table th {
+			
+			font-weight:1000;
+			padding:10px 20px;
+			text-align:center;
+			background:black;
+			font-size:25px;
+		}
+		#audioList table tbody {
+			padding:0; margin:0;
+			border-collapse:collapse;
+			border-spacing:0px;
+			
+		}
+			#audioList table td {
+				
+				padding:10px 10px;
+				text-align:center;
+				color:white;
+				background-color:rgb(24,24,24);
+				font-size:16px;
+			}
+	
+	
+			
+#audioPlayer
+{
+	display:none;
+	right:0;
+	bottom:0;
+	width:100%;
+	color:red;
+	position:sticky;
+	background-color:black;
+	z-index: 999;
+	
+}
+
+#userInfo {
+	width:250px;
+	position:absolute;
+	top:0; left:0;
+}
+	#userInfo p {
+		padding:15px;
+		border:1px solid #CCC;
+		background:rgba(80,120,255,0.05);
+	}
+.table,.table-dark,.table-hover
+{ 
+text-align:center;
+background-color:rgb(64,64,64);
+}
+fieldset {
+	border:0;
+	padding:10px; margin:0;
+}
+#addAudioForm
+{
+	
+	padding:20px;
+	
+	background:black;
+	text-align :center;
+	box-shadow: 0px 0px 30px black;
+	
+}
+#addAudioFormFieldset
+{
+	
+	padding:20px;
+	border-radius:12px;
+	background:black;
+	text-align :center;
+	font-size:10px;
+	color:red;
+}
+#songFile
+{
+	padding:0px;
+	background:black;
+	text-align :center;
+	font-size:15px;
+	color:white;
+	width:196px;
+}
+#songName
+{
+	font-size:15px;
+	padding:10px;
+	background:black;
+	text-align :center;
+	color:white;
+}
+#songSubmit
+{
+	background-image:linear-gradient(rgb(144,0,0),rgb(216,0,0),rgb(255,0,0));padding:8px;border-radius:13px;
+}
+
+
+
+#addImageForm
+{
+	padding:20px;
+	
+	background:black;
+	text-align :center;
+	box-shadow: 0px 0px 30px black;
+}
+#addImageFormFieldset
+{
+	
+	padding:20px;
+	border-radius:12px;
+	background:black;
+	text-align :center;
+	font-size:10px;
+	color:red;
+}
+#imageFile
+{
+	padding:0px;
+	background:black;
+	text-align :center;
+	font-size:15px;
+	color:white;
+	width:196px;
+}
+#imageName
+{
+	font-size:15px;
+	padding:10px;
+	background:black;
+	text-align :center;
+	color:white;
+}
+#imageSubmit
+{
+	background-image:linear-gradient(rgb(144,0,0),rgb(216,0,0),rgb(255,0,0));padding:8px;border-radius:13px;
+}
+.sliderTitle
+{
+	color:rgb(200,200,200);
+	margin-left:20px;
+	font-family: inherit;
+	text-shadow:0px 8px 8px black;
+	font-size:20px;
+}
+.hr{
+	
+	border: 0.3px solid rgb(160,160,160);
+	margin-left: 20px;
+  margin-right: 20px;
+  box-shadow:0px 0px 2px #15b4fd;
+}
+
+label
+{
+		padding:10px;
+	background:black;
+	text-align :center;
+	font-size:15px;
+	color:white;
+	
+}
+
+
+.hoverPlayIcon
+{
+	left:40%;
+	top: 40%;
+	color: white;
+	font-size: 70px;
+	position: absolute;
+	display: block;
+	opacity: 0;
+	background-color: black;
+    border-radius: 50% 50% 50% 50%;
+
+}
+.hoverPlayIcon:hover
+{
+	color: #007bff;
+	
+}
+
+/* To display playIcon  on hover over song */
+.hide:hover .hoverPlayIcon, .hide2:hover .hoverPlayIcon
+{
+	
+	opacity: 0.8;
+	transition: all  0.5s ease-out;
+	-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+.sliderHoverContent
+{
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	background: black;
+	z-index: 2;
+}
+
+
+
+
+
+
+
+
+/* WP1 webpage css file copied */
+
+
+
+
+
+.audhide
+{ display:none;
+float:right;
+}
+.muslist
+{cursor:pointer;
+
+}
+.muslist:hover{
+color:#5c85ff;}
+
+
+/*  ALREADY DEFINED ABOVE
+.body{
+background-color:rgb(64,64,64);
+} */
+.head1{
+
+background-color:black;
+padding:10px;
+margin:0px;
+margin-bottom: 0px !important;
+margin-top: 0px !important;
+text-decoration:none;
+}
+.head1:hover{
+box-shadow:0px 3px 5px white;
+}
+
+
+.inhead1{
+color:linear-gradient(rgb(51, 153, 255),rgb(0, 138, 230));
+font-size:40px;
+padding:10px;
+font-family:Brush Script MT;
+font-stretch:ultra-expanded;
+font-weight: normal;
+text-decoration:none;
+}
+.browse{
+color:#15b4fd;
+font-size:20px;
+padding:10px;
+text-decoration:none;
+}
+.home{
+color:#15b4fd;
+font-size:20px;
+padding:10px;
+text-decoration:none;
+}
+.bckground{
+width:100%;
+height:350px;
+background-image:url("/image/getImage/HomePage_Theme2");
+background-repeat:no-repeat;
+color:white;
+background-size:100% 100%;
+margin:0;
+padding:0px;
+ box-shadow: 0px 5px 30px black;
+ 
+
+
+}
+.imghead{
+position :absolute;
+text-align:center;
+width:100%;
+top:50%;
+left:0;
+font-size:50px;
+font-weight:bold;
+font-family:initial;
+
+}
+
+* {box-sizing:border-box}
+
+.slider
+{
+width:100%;
+height:400px;
+
+  padding: 50px 4px;
+}
+
+
+.hide
+{
+cursor: pointer;	
+display:none;
+width:33.3%;
+height:250px;
+float:left;
+padding:25px;
+border-radius:10px;
+border:0.5px;
+position: relative;
+
+
+}
+.hide2
+{
+	cursor: pointer;
+display:none;
+width:33.3%;
+height:250px;
+float:left;
+padding:25px;
+border-radius:10px;
+border:0.5px;
+position: relative;
+
+}
+.hide:hover,.hide2:hover
+{
+
+	box-shadow:0px 2px 10px #15b4fd;
+}
+
+
+
+
+.imgslider
+{
+	width:100%;
+	height:200px;
+	border-radius:15px;
+
+	box-shadow:0px 5px 10px black;
+	z-index: 3;
+	
+}
+
+.hide:hover .imgslider,.hide2:hover .imgslider
+{
+	opacity: 0.5;
+}
+
+
+
+
+
+
+.prev,.next
+{
+cursor:pointer;
+color:white;
+background-color:grey;
+
+font-size:20px;
+
+position:absolute;
+width:auto;
+top:550px;
+padding:12px;
+border-radius:3px;
+transition:0.6s ease;
+user-select:none;
+margin-top: 150px;
+z-index:10;
+
+}
+
+/*Position the buttn to the right and left*/
+.next
+{
+right:0;
+
+opacity: 0.8;
+box-shadow: -10px 0px 10px black;
+}
+.prev
+{
+left:0;
+
+opacity: 0.8;
+box-shadow:8px 0px 10px black;
+}
+
+.prev:hover,.next:hover
+{
+	color:#007bff;
+background-color:black;
+box-shadow:0px 0px 5px white;
+}
+
+/* Next2 and prev2 are for Hollywood Slider */
+
+.prev2,.next2
+{
+cursor:pointer;
+color:white;
+background-color:grey;
+
+font-size:20px;
+
+position:absolute;
+width:auto;
+top:950px;
+padding:12px;
+border-radius:3px;
+transition:0.6s ease;
+user-select:none;
+margin-top: 150px;
+z-index:2;
+
+}
+.next2
+{
+right:0;
+
+opacity: 0.8;
+box-shadow: -10px 0px 10px black;
+}
+.prev2
+{
+left:0;
+
+opacity: 0.8;
+box-shadow:8px 0px 10px black;
+}
+
+.prev2:hover,.next2:hover
+{
+background-color:black;
+color:#007bff;
+box-shadow:0px 0px 5px white;
+}
+
+
+.caption
+{
+color:white;
+font-size:15px;
+padding:10px 5px;
+bottom:8px;
+text-align:center;
+font-family:Lucida Console;
+}
+
+.table,.table-dark,.table-hover
+{ 
+
+background-color:#101010;
+}
+
+.dot
+{
+cursor:pointer;
+border-radius:50%;
+width:15px;
+height:15px;
+background-color:white;
+transition:background-color 0.5s ease;
+display:inline-block;
+bottom:0;
+
+}
+
+.dot:hover
+{
+background-color:#5c85ff;
+}
+
+.animation
+{
+
+-webkit-animation-name:fade;
+-webkit-animation-duration:1.5s;
+animation-name:fade;
+animation-duration:1.5s;
+}
+
+@-webkit-keyframes animation
+{
+  from{opacity:0.4}
+  to{opacity:1}
+}
+@keyframes animation
+{ 
+from{opacity:0.4}
+to{opacity:1}
+}
+
+
+
+/* Responsive layout  */
+
+
+
+@media screen and (max-width:800px)
+{
+	
+	.hide
+	{
+	  width:50%;
+	  
+	}
+	  .slider
+	  {
+		width:100%;
+		height:500px;
+		
+	  }
+
+	.bckground
+	{
+		background-image: url("/image/getImage/HomePage_Theme1");;
+	}
+	  
+
+}
+
+@media screen and (max-width:600px)
+{
+	
+		  .hide,.hide2
+		  {
+			  width:100%;
+			
+		  }
+		  
+		  .slider
+		  {
+			width:100%;
+			height:350px;
+			padding: 20px 4px;
+		  }
+		  
+		  .prev,.next
+		  {
+			  top:500px;
+		  }
+		  .prev2,.next2
+		  {
+			  top:880px;
+		  }
+
+		  .bckground
+		{
+			background-image: url("/image/getImage/HomePage_Theme1");;
+		}
+
+		
+		.hide:hover .hoverPlayIcon, .hide2:hover .hoverPlayIcon
+		{
+			
+			display: none;
+		}
+  
+}
+
+/* Custom audioPlayer */
+#play-pause
+{
+	
+	margin-left: 25%;
+	text-shadow: 0px 0px 10px white;
+	
+	
+}
+#custom-audioPlayer
+{
+	display: none;
+	bottom: 0px;	
+	height: 60px;
+	
+	position: sticky;
+	background: black;
+	z-index: 999;
+	padding: 10px;
+	box-shadow: #007bff 0px 2px 24px;
+}
+
+.customAudioPlayer
+{
+	color:#007bff;
+	font-size:45px;
+	float: left;
+	cursor:pointer;
+	text-shadow: 0px 0.5px 5px #8f8efb99;
+}
+#nextSongButton{
+	margin-left: 75%;
+	margin-inline-start: 25%;
+}
+
+#prevSongButton{
+	margin: auto;
+}
+
+
+/* Custom Player TrackName */
+#player-TrackName
+{
+	display: inline-block;
+    margin-bottom: auto;
+    font-size: 20px;
+	width: 25%;
+	cursor: context-menu;
+    padding: 10px;
+	text-align: center;
+	color: #63c5fd;
+}
+
+/* Responsive Layout for Custom audio Player */
+@media screen and (max-width:600px)
+{
+	#player-TrackName
+	{
+		font-size: 15px;
+		padding: 5px;
+		
+	}
+	#nextSongButton,#play-pause
+	{
+		margin-left: 10%;
+	}
+	#prevSongButton
+	{
+		margin-left: 10%;
+	}
+}
+
+.playlist
+{
+	cursor: pointer;
+	width: 33.3%;
+    height: 280px;
+    float: left;
+    padding: 25px;
+    border-radius: 10px;
+	border: 0.5px;
+	text-align: center;
+	bottom: 0;
+    position: relative;
+}
+
+
+.playlistTitle
+{
+	bottom: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    color: white;
+	font-size: 15px;
+	font-family: Lucida Console;
+}
+
+.playlist:hover
+{opacity:0.8;
+box-shadow:0px 2px 5px #15b4fd;
+}
+.playlistTitle:hover
+{
+	color:white;
+}
+#playlistContainer
+{
+	width: 100%;
+    height: 440px;
+    padding: 50px 4px;
+}
+
+/* Responsive Layout */
+@media screen and (max-width:600px)
+{
+	.playlist
+	{
+		width:100%;
+	}
+	#playlistContainer
+	{
+		height: 980px;
+	}
+}

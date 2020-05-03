@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	h1=title
+	h2 Add Song
+	br
+	form(action='/audio/addAudio/' ,method='POST',enctype="multipart/form-data",id='addAudioForm')
+			br
+			label Song Type : 
+			select(name='songType' placeholder='Song Type' required) Song Type
+				option(value='default') Select Song Type
+				option(value='Hollywood') Hollywood
+				option(value='fs') Bollywood			  
+			br
+			br
+			input(id='songFile',type='file',name='track',placeholder='Audio File')
+			br
+			br
+			input(id='songName',type='text',name='name',placeholder='Song Name')
+			br
+			br
+			input(id='songSubmit',type='submit',value='submit')

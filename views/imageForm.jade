@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1=title
+	h2 Add Image
+	
+	form(action='/image/' ,method='POST',enctype="multipart/form-data",id='addImageForm')
+			br
+			br
+			input(id='imageFile',type='file',name='imageFile',placeholder='Image File')
+			br
+			br
+			input(id='imageName',type='text',name='name',placeholder='Image Name')
+			br
+			br
+			input(id='imageSubmit',type='submit',value='submit')
