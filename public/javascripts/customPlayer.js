@@ -306,7 +306,7 @@ function playerProgress()
 			progress=(audioPlayer.currentTime/audioPlayer.duration)*100;
 			progress=Math.round(progress);
 			//TO show the progrees of song played in Custom audio Player
-			value="-webkit-linear-gradient(left, #1e1e30 "+ progress + "% ,black " +progress+"% )";
+			value="-webkit-linear-gradient(left, #1e1e30 "+ progress + "% ,#00001d " +progress+"% )";
 			$('#custom-audioPlayer').css("background",value);
 			// console.log(value);
 		});
