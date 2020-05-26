@@ -1,15 +1,27 @@
+
+/**	This file contains implementation of both 
+ * 	CIRCULAR and LINEAR CUSTOM AUDIO PLAYERS
+ * 
+ *  */
+
 $(document).ready(function () {
 
 	playerProgress();
-    //Username link click
-	
-	$('#play-pause').on('click',changePlayerStatus);
-	$('#nextSongButton').on('click',()=>{ changeAudio(1)});
-	$('#prevSongButton').on('click',()=>{ changeAudio(-1)});
-	
+
+	$('#play-pause').on('click', changePlayerStatus);
+	$('#nextSongButton').on('click', () => { changeAudio(1) });
+	$('#prevSongButton').on('click', () => { changeAudio(-1) });
+
 	$('#audioList table tbody').on('click', 'td a.linkshowuser', playAudio);
 	//Delete Song
 	$('#audioList table tbody').on('click', 'td a.linkdeleteuser', deleteAudio);
+
+
+
+	/* For CIRCULAR  player  */
+	$('.play-pauseIconDiv').on('click', changePlayerStatus);
+
+
 
 
 });
@@ -20,23 +32,23 @@ $(document).ready(function () {
 //Play audio
 function playAudio(event) {
 	console.log("Inside playAudio function");
-	var audioPlayer=document.getElementById('audioPlayer')
-	
+	var audioPlayer = document.getElementById('audioPlayer')
+
 	var trackName = $(this).attr('rel');
 	// debugger
 	console.log("trackName", trackName);
 
-	songURL='/audio/tracks/'+trackName;
+	songURL = '/audio/tracks/' + trackName;
 	songIndex = $(".song").index(this);
 	// loadAudio(trackName);
-	$("#audioSource").attr('src',songURL);
+	$("#audioSource").attr('src', songURL);
 	loadPlayerTrackName(trackName);
 
 	audioPlayer.load();
 	audioPlayer.play();
 
 	// audioPlayer.style.display='block';
-	$('#custom-audioPlayer').css("display","block");
+	// $('#custom-audioPlayer').css("display","block");
 	document.documentElement.requestFullscreen();
 
 	// window.alert("hi"+ songIndex);
@@ -45,82 +57,52 @@ function playAudio(event) {
 
 };
 
-	/* function to play next song after completion of current song */
-/* function nextAudio()
-{
-		console.log("Inside nextAudio function");
-		// $("song").index(this);
-		
 
-		var audioPlayer=document.getElementById('audioPlayer')
-		length = $(".song").size();
+/* 	To change the audio
+	choice = +1 for next audio 
+	choice= -1 for previous audio  */
+function changeAudio(choice) {
+	console.log("Inside changeAudio function ");
+	var playing;
+	// $("song").index(this);
+
+
+	var audioPlayer = document.getElementById('audioPlayer')
+	length = $(".song").size();
+	if (choice == 1) {
+		playing = "Next Audio";
 		if (songIndex == length - 1) {
 			songIndex = 0;
 		}
 		else {
 			songIndex += 1;
 		}
-		var nextSongName=$(".song").eq(songIndex).attr('rel');
-		
-		nextSongURL='/audio/tracks/'+nextSongName;
-		console.log("nextSongName :",nextSongName,"nextSongURL:",nextSongURL);
-		$("#audioSource").attr('src',nextSongURL);
-		loadPlayerTrackName(nextSongName);
-	
-		audioPlayer.load();
-		audioPlayer.play();
-		// audioPlayer.style.display='block';
-		
-}
- */
-/* 	To change the audio
-	choice = +1 for next audio 
-	choice= -1 for previous audio  */
-function changeAudio(choice)
-{
-	console.log("Inside changeAudio function ");
-	var playing;
-		// $("song").index(this);
-		
-
-		var audioPlayer=document.getElementById('audioPlayer')
-		length = $(".song").size();
-		if(choice==1)
-		{
-			playing="Next Audio";
-			if (songIndex == length - 1) {
-				songIndex = 0;
-			}
-			else {
-				songIndex += 1;
-			}
+	}
+	else if (choice == -1) {
+		playing = "Previous Audio";
+		if (songIndex == 0) {
+			songIndex = length - 1;
 		}
-		else if(choice==-1)
-		{
-			playing="Previous Audio";
-			if (songIndex == 0) {
-				songIndex =  length - 1;
-			}
-			else {
-				songIndex -= 1;
-			}
+		else {
+			songIndex -= 1;
 		}
+	}
 
 
-		var nextSongName=$(".song").eq(songIndex).attr('rel');
-		
-		nextSongURL='/audio/tracks/'+nextSongName;
-		console.log("Playing --" + playing+ "|  SongName :",nextSongName);
-		$("#audioSource").attr('src',nextSongURL);
-		loadPlayerTrackName(nextSongName);
-	
-		
-		audioPlayer.load();
-		audioPlayer.play();
-		
-		// audioPlayer.style.display='block';
+	var nextSongName = $(".song").eq(songIndex).attr('rel');
 
-		
+	nextSongURL = '/audio/tracks/' + nextSongName;
+	console.log("Playing --" + playing + "|  SongName :", nextSongName);
+	$("#audioSource").attr('src', nextSongURL);
+	loadPlayerTrackName(nextSongName);
+
+
+	audioPlayer.load();
+	audioPlayer.play();
+
+	// audioPlayer.style.display='block';
+
+
 }
 
 function playHollyAudio(event) {
@@ -134,7 +116,7 @@ function playHollyAudio(event) {
 	/* audioPlayer.load(); */
 	audioPlayer.play();
 	// audioPlayer.style.display = 'block';
-	$('#custom-audioPlayer').css("display","block");
+	$('#custom-audioPlayer').css("display", "block");
 
 };
 
@@ -166,171 +148,123 @@ function deleteAudio(event) {
 };
 
 
-/*  It is disabled as the task had alreday implemented in easier way
-
-//Add Song with POST request
-function addSong(event)
-{
-	event.preventDefault();
-	var errorCount=0;
-	$('#addAudioForm input').each(function(index,val)
-	{
-		if($(this).val===''){errorCount++;}
-	});
-
-	if(errorCount===0)
-	{
-		var newAudio=
-		{
-			'track':$('#addAudioForm fieldset input #songFile ').val(),
-			'name':$('#addAudioForm fieldset input #songName ').val()
-		}
-
-		//AJAX to post the song
-		$.ajax(
-		{
-			type:'POST',
-			data:newAudio,
-			url:'/audio/addAudio/',
-			dataType:'JSON'
-		}).done(function(response)
-		{
-			//check for successful blank response
-			if(response.msg==='')
-			{
-				//Clear the form inputs
-				$('#addAudioForm input').val('');
-				//Update the table
-				populateTable();
-			}
-			else
-			{
-				//if something went wrong
-				alert('ERROR :'+response.msg);
-			}
-		});
-	}
-	else
-	{
-		//if any field is empty
-		alert('Please fill in sll the fields');
-		return false;
-	}
-};
-
-*/
-
-
-function canplaythrough()
-{
+function canplaythrough() {
 	console.log("In canplaythrough");
 }
 
 
-            
-function changePlayerStatus()
-{
+
+function changePlayerStatus() {
 	// event.preventDefault();
-	var A_Player=document.getElementById('audioPlayer');
-	var playing="pause_circle_filled";
-	var paused="play_circle_filled";
-	var currentStatus=$('#play-pause').html();
-	var newStatus;
-	if(A_Player.paused)
-	{
-		if(A_Player.duration==0)
-		{
+	var A_Player = document.getElementById('audioPlayer');
+
+
+	if (A_Player.paused) {
+		if (A_Player.duration == 0) {
 			A_Player.load();
 		}
 		A_Player.play();
 		// TO Change Icon to play State
 		changePlayPauseIcon(1);
-		console.log("AudioPlayer status changed --  Playing"  );
-		
+		console.log("AudioPlayer status changed --  Playing");
+
 	}
-	else
-	{
+	else {
 		A_Player.pause();
 		// TO Change Icon to paused State
 		changePlayPauseIcon(0);
-		console.log("AudioPlayer status changed -- paused"  );
-		
+		console.log("AudioPlayer status changed -- paused");
+
 	}
-	$('#play-pause').html(newStatus);
-	
+
+
 }
 
 /* choice =1 to switch to  playing state choice = 0 to switch to pause state*/
-function changePlayPauseIcon(choice)
-{
+function changePlayPauseIcon(choice) {
 	var newStatus;
-	var playing="pause_circle_filled";
-	var paused="play_circle_filled";
-	if(choice==1)
-	{
-		newStatus=playing;
+	var playing = "pause";
+	var paused = "play_arrow";
+	if (choice == 1) {
+		newStatus = playing;
 		console.log("In changePlayPauseIcon func. - New Status -- playing");
 	}
-	else if(choice==0)
-	{
-		newStatus=paused;
+	else if (choice == 0) {
+		newStatus = paused;
 		console.log("In changePlayPauseIcon func. - New Status -- paused");
 	}
 
+	/* For Linear Player */
 	$('#play-pause').html(newStatus);
-	
+
+	/* For Circular Player */
+	$('.play-pauseIcon').html(newStatus);
+
 }
-function loadPlayerTrackName(trackName)
-{
-	trackName=trackName.slice(6);
+function loadPlayerTrackName(trackName) {
+	trackName = trackName.slice(6);
 	$('#player-TrackName').html(trackName);
 
 	/* To load song name and its image in notification section*/
-	if('mediaSession' in navigator)
-	{
-		navigator.mediaSession.metadata=new MediaMetadata({
-			title:trackName,
-			artwork:[ {src:"/image/getImage/"+trackName, type: 'image/png'}]
+	if ('mediaSession' in navigator) {
+		navigator.mediaSession.metadata = new MediaMetadata({
+			title: trackName,
+			artwork: [{ src: "/image/getImage/" + trackName, type: 'image/png' }]
 		});
 		// console.log(" metadata");
 	}
 }
-function playerProgress()
-{
-	var audioPlayer=document.getElementById('audioPlayer');
-	audioPlayer.addEventListener("loadedmetadata",()=>
-	{
+function playerProgress() {
+	var audioPlayer = document.getElementById('audioPlayer');
+	audioPlayer.addEventListener("loadedmetadata", () => {
 		/* To show progress of audio playing using backround colours */
-		audioPlayer.addEventListener('timeupdate',()=>
-		{
-			progress=(audioPlayer.currentTime/audioPlayer.duration)*100;
-			progress=Math.round(progress);
-			//TO show the progrees of song played in Custom audio Player
-			value="-webkit-linear-gradient(left, #1e1e30 "+ progress + "% ,#00001d " +progress+"% )";
-			$('#custom-audioPlayer').css("background",value);
+		audioPlayer.addEventListener('timeupdate', () => {
+			progress = (audioPlayer.currentTime / audioPlayer.duration);
+
+			//TO show the progrees of current track playing  Player
+
+
+			/* For Linear Player */
+
+			value = "-webkit-linear-gradient(left, #1e1e30 " + (progress * 100) + "% ,#00001d " + progress + "% )";
+			$('#custom-audioPlayer').css("background", value);
 			// console.log(value);
+
+
+
+
+			/* For Circular Player */
+
+			radius = 45;
+			circumference = 2 * (22 / 7) * radius;
+			progressLength = (circumference * (1 - progress));
+
+			$('.customCircularAudioPlayer svg circle:nth-child(2)').css("stroke-dashoffset", progressLength);
+			// console.log(value);
+
+
 		});
-		
+
 	});
 
 
 
 	/* To control music from keyboard or from notification icon in mobile  */
-	
-	
-	navigator.mediaSession.setActionHandler('nexttrack',()=>{
+
+
+	navigator.mediaSession.setActionHandler('nexttrack', () => {
 		console.log('Nexttrack Keyboard key pressed');
 		changeAudio(1);
 	});
-	navigator.mediaSession.setActionHandler('previoustrack',()=>{
+	navigator.mediaSession.setActionHandler('previoustrack', () => {
 		console.log('previoustrack Keyboard key pressed');
 		changeAudio(-1);
 	});
-	navigator.mediaSession.setActionHandler('play',()=>{
+	navigator.mediaSession.setActionHandler('play', () => {
 		console.log('Play Keyboard key pressed');
 		changePlayerStatus(1);
 	});
-	navigator.mediaSession.setActionHandler('pause',()=>{
+	navigator.mediaSession.setActionHandler('pause', () => {
 		console.log('Pause Keyboard key pressed');
 		changePlayerStatus(0);
 	});
