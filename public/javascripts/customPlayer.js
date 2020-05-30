@@ -235,7 +235,7 @@ function playerProgress() {
 
 			/* For Circular Player */
 
-			radius = 45;
+			radius = 35;
 			circumference = 2 * (22 / 7) * radius;
 			progressLength = (circumference * (1 - progress));
 

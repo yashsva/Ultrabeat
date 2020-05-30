@@ -53,13 +53,31 @@ function populateTable() {
 			if (i <= 8) {
 				if (i < 3) {
 					tempContent += '<div class="hide animation "><img  src="/image/getImage/' + this.filename + '"  class="imgslider song" rel="bolly/' + this.filename
-					 + '"><i class="material-icons hoverPlayIcon">play_arrow</i><div class="caption">'
-					  + this.filename + '</div></div>';
+					 + '"><i class="material-icons hoverPlayIcon">play_arrow</i>'
+					 +'<div class="div_thumbnailOptions">'
+						+'<i class="material-icons icon_thumbnailOptions">more_vert</i>'
+						+'<div class="div_list_thumbnailOptions">'
+							+'<ul class="list_thumbnailOptions">'
+								+'<li>Play Next</li>'
+								+'<li>Add to Queue</li>'
+							+'</ul>'
+						+'</div>'
+					 +'</div>'
+					 +'<div class="caption">' + this.filename + '</div></div>';
 				}
 				else {
 					sliderContent += '<div class="hide animation "><img  src="/image/getImage/' + this.filename + '"  class="imgslider song" rel="bolly/' + this.filename 
-					+ '"><i class="material-icons hoverPlayIcon">play_arrow</i><div class="caption">'
-					 + this.filename + '</div></div>';
+					+ '"><i class="material-icons hoverPlayIcon">play_arrow</i>'
+					+'<div class="div_thumbnailOptions">'
+						+'<i class="material-icons icon_thumbnailOptions">more_vert</i>'
+						+'<div class="div_list_thumbnailOptions">'
+							+'<ul class="list_thumbnailOptions">'
+								+'<li>Play Next</li>'
+								+'<li>Add to Queue</li>'
+							+'</ul>'
+						+'</div>'
+					+'</div>'
+					+'<div class="caption">' + this.filename + '</div></div>';
 					 
 
 				}
@@ -141,13 +159,31 @@ function loadHollySlider() {
 				if (i < 3) {
 					tempContent += '<div class="hide2 animation "><img  src="/image/getImage/' + this.filename + 
 							'"  class="imgslider song" rel="holly/' + this.filename 
-							+ '"><i class="material-icons hoverPlayIcon">play_arrow</i><div class="caption">'
-							+ this.filename + '</div></div>';
+							+ '"><i class="material-icons hoverPlayIcon">play_arrow</i>'
+							+'<div class="div_thumbnailOptions">'
+					+'<i class="material-icons icon_thumbnailOptions">more_vert</i>'
+					+'<div class="div_list_thumbnailOptions">'
+							+'<ul class="list_thumbnailOptions">'
+								+'<li>Play Next</li>'
+								+'<li>Add to Queue</li>'
+							+'</ul>'
+						+'</div>'
+					+'</div>'
+					+'<div class="caption">' + this.filename + '</div></div>';
 				}
 				else {
 					sliderContent += '<div class="hide2 animation"><img  src="/image/getImage/' + this.filename + '"  class="imgslider song" rel="holly/' + this.filename 
-					+ '"><i class="material-icons hoverPlayIcon">play_arrow</i><div class="caption">' 
-					+ this.filename + '</div></div>';
+					+ '"><i class="material-icons hoverPlayIcon">play_arrow</i>' 
+					+'<div class="div_thumbnailOptions">'
+						+'<i class="material-icons icon_thumbnailOptions">more_vert</i>'
+						+'<div class="div_list_thumbnailOptions">'
+							+'<ul class="list_thumbnailOptions">'
+								+'<li>Play Next</li>'
+								+'<li>Add to Queue</li>'
+							+'</ul>'
+						+'</div>'
+					+'</div>'
+					+'<div class="caption">' + this.filename + '</div></div>';
 
 				}
 				if (i == 4) {

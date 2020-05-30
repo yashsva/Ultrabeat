@@ -12,14 +12,14 @@
 	text-align: center;
 	text-shadow: 0px 8px 8px black;
 	background-color: black;
-	box-shadow: 0px 8px 20px #007bff;
+	box-shadow: 0px 8px 20px #00a3ff;
 	letter-spacing: 1px;
 }
 
 h2 {
 	margin: 0 0 .5em 0;
 	padding: 20px;
-	color: #007bff;
+	color: #00a3ff;
 	text-shadow: 0px 8px 8px black;
 }
 
@@ -27,7 +27,7 @@ h3 {
 	margin: 0 0 .5em 0;
 	padding: 20px;
 	color: white;
-	text-shadow: 0px 8px 8px #007bff;
+	text-shadow: 0px 8px 8px #00a3ff;
 }
 
 h1 {
@@ -35,12 +35,12 @@ h1 {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	text-shadow: 0px 8px 8px black;
-	color: #007bff;
+	color: #00a3ff;
 }
 
 p {
 	padding: 20px;
-	color: #007bff;
+	color: #00a3ff;
 	text-shadow: 0px 8px 8px black;
 }
 
@@ -52,6 +52,7 @@ p {
 a {
 	padding: 20px;
 	text-shadow: 0px 8px 8px black;
+	color: #00a3ff;
 }
 
 a:hover {
@@ -248,7 +249,7 @@ label {
 }
 
 .hoverPlayIcon:hover {
-	color: #007bff;
+	color: #00a3ff;
 }
 
 /* To display playIcon  on hover over song */
@@ -438,7 +439,7 @@ background-color:rgb(64,64,64);
 }
 
 .prev:hover, .next:hover {
-	color: #007bff;
+	color: #00a3ff;
 	background-color: black;
 	box-shadow: 0px 0px 5px white;
 }
@@ -475,7 +476,7 @@ background-color:rgb(64,64,64);
 
 .prev2:hover, .next2:hover {
 	background-color: black;
-	color: #007bff;
+	color: #00a3ff;
 	box-shadow: 0px 0px 5px white;
 }
 
@@ -486,6 +487,8 @@ background-color:rgb(64,64,64);
 	bottom: 8px;
 	text-align: center;
 	font-family: Lucida Console;
+	-moz-user-select: none;
+    user-select: none;
 }
 
 .table, .table-dark, .table-hover {
@@ -587,11 +590,11 @@ background-color:rgb(64,64,64);
 	background: #00001d;
 	z-index: 999;
 	padding: 10px;
-	box-shadow: #007bff 0px 2px 24px;
+	box-shadow: #00a3ff 0px 2px 24px;
 }
 
 .customAudioPlayer {
-	color: #007bff;
+	color: #00a3ff;
 	font-size: 45px;
 	float: left;
 	cursor: pointer;
@@ -685,4 +688,65 @@ background-color:rgb(64,64,64);
 	#playlistContainer {
 		height: 980px;
 	}
+}
+
+/* Track Thumbnail "More Options" icon css  */
+.div_thumbnailOptions {
+	top: 10%;
+	right: 5%;
+	position: absolute;
+}
+
+.icon_thumbnailOptions {
+	opacity: 0;
+	color: red;
+	font-size: 30px;
+	transition: 0.5s;
+	background-color: black;
+	-moz-user-select: none;
+    user-select: none;
+}
+
+.hide:hover .icon_thumbnailOptions, .hide2:hover .icon_thumbnailOptions{
+	opacity: 1;
+	transition: all 0.5s ease-out;
+	display: block;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.div_thumbnailOptions:hover .div_list_thumbnailOptions {
+	display: block;
+}
+
+.div_list_thumbnailOptions {
+	display: none;
+	padding: 0px;
+	position: absolute;
+	min-width: 140px;
+	box-shadow: 0 5px 15px black;
+	right: 0;
+	
+}
+
+.list_thumbnailOptions {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	background-color: #01446a;
+	color: #ff8484;
+	border-radius: 5px;
+}
+
+.list_thumbnailOptions li {
+	padding: 15px
+	
+}
+
+.list_thumbnailOptions li:hover {
+	/* background-color: #256e98; */
+	background-color: #812929;
+	-moz-user-select: none;
+    user-select: none;
+	
 }

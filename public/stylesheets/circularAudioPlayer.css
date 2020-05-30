@@ -2,8 +2,8 @@
     right: 10px;
     bottom: 10px;
     position: fixed;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     box-shadow: 0 5px 20px #03e9f4;
     background: #1f0101;
@@ -12,10 +12,10 @@
 
 svg {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     z-index: 1000;
-    /* background: black; */
+    /* background: #1f0101; */
 }
 
 svg circle {
@@ -23,14 +23,14 @@ svg circle {
     height: 100%;
     fill: none;
     stroke: #00a3ff;
-    stroke-width: 5;
+    stroke-width: 4;
     stroke-linecap: round;
     transform: translate(5px, 5px);
 }
 
 svg circle:nth-child(2) {
-    stroke-dasharray: 283;
-    stroke-dashoffset: 283;
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
     stroke: red;
     transform: rotate(-90deg) translate(5px, 5px);
     transform-origin: 50% 50%;
@@ -50,9 +50,9 @@ svg circle:nth-child(2) {
 }
 
 .customCircularAudioPlayer .play-pauseIconDiv .play-pauseIcon {
-    color: white;
+    
     font-weight: 700;
-    font-size: 50px;
+    font-size: 40px;
     transition: 0.5s;
     -moz-user-select: none;
     user-select: none;
@@ -61,7 +61,7 @@ svg circle:nth-child(2) {
 
 .customCircularAudioPlayer:hover .play-pauseIconDiv .play-pauseIcon {
     color: red;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .customCircularAudioPlayer:hover {
