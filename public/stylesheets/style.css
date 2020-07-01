@@ -330,18 +330,6 @@ background-color:rgb(64,64,64);
 	text-decoration: none;
 }
 
-.bckground {
-	width: 100%;
-	height: 350px;
-	background-image: url("/image/getImage/HomePage_Theme2");
-	background-repeat: no-repeat;
-	background: linear-gradient(to bottom, opacity 0.5, opacity 0.1);
-	color: white;
-	background-size: 100% 100%;
-	margin: 0;
-	padding: 0px;
-	box-shadow: 0px 5px 30px black;
-}
 
 .imghead {
 	position: absolute;
@@ -545,10 +533,7 @@ background-color:rgb(64,64,64);
 		width: 100%;
 		height: 500px;
 	}
-	.bckground {
-		background-image: url("/image/getImage/HomePage_Theme1");
-		;
-	}
+	
 }
 
 @media screen and (max-width:600px) {
@@ -561,15 +546,12 @@ background-color:rgb(64,64,64);
 		padding: 20px 4px;
 	}
 	.prev, .next {
-		top: 500px;
+		top: 350px;
 	}
 	.prev2, .next2 {
-		top: 880px;
+		top: 720px;
 	}
-	.bckground {
-		background-image: url("/image/getImage/HomePage_Theme1");
-		;
-	}
+	
 	.hide:hover .hoverPlayIcon, .hide2:hover .hoverPlayIcon {
 		display: none;
 	}
