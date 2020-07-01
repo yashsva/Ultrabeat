@@ -71,4 +71,7 @@ body {
         float: left;
         height: 200px;
     }
+    #header_imageBanner {
+        height:200px;
+    }
 }
