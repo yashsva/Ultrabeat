@@ -240,7 +240,7 @@ label {
 	left: 40%;
 	top: 40%;
 	color: white;
-	font-size: 70px;
+	font-size: 60px;
 	position: absolute;
 	display: block;
 	opacity: 0;
@@ -348,15 +348,15 @@ background-color:rgb(64,64,64);
 
 .slider {
 	width: 100%;
-	height: 400px;
-	padding: 50px 4px;
+	height: 370px;
+	padding: 50px 4px 35px 4px;
 }
 
 .hide {
 	cursor: pointer;
 	display: none;
-	width: 33.3%;
-	height: 250px;
+	width: 25%;
+	height: 220px;
 	float: left;
 	padding: 25px;
 	border-radius: 10px;
@@ -368,8 +368,8 @@ background-color:rgb(64,64,64);
 .hide2 {
 	cursor: pointer;
 	display: none;
-	width: 33.3%;
-	height: 250px;
+	width: 25%;
+	height: 220px;
 	float: left;
 	padding: 25px;
 	border-radius: 10px;
@@ -386,8 +386,8 @@ background-color:rgb(64,64,64);
 
 .imgslider {
 	width: 100%;
-	height: 200px;
-	border-radius: 15px;
+	height: 160px;
+	border-radius: 5px;
 	box-shadow: 0px 5px 10px black;
 	z-index: 3;
 }
@@ -400,10 +400,10 @@ background-color:rgb(64,64,64);
 	cursor: pointer;
 	color: white;
 	background-color: grey;
-	font-size: 20px;
+	font-size: 16px;
 	position: absolute;
 	width: auto;
-	top: 550px;
+	top: 525px;
 	padding: 12px;
 	border-radius: 3px;
 	transition: 0.6s ease;
@@ -438,10 +438,10 @@ background-color:rgb(64,64,64);
 	cursor: pointer;
 	color: white;
 	background-color: grey;
-	font-size: 20px;
+	font-size: 16px;
 	position: absolute;
 	width: auto;
-	top: 950px;
+	top: 895px;
 	padding: 12px;
 	border-radius: 3px;
 	transition: 0.6s ease;
@@ -470,7 +470,7 @@ background-color:rgb(64,64,64);
 
 .caption {
 	color: white;
-	font-size: 15px;
+	font-size: 14px;
 	padding: 10px 5px;
 	bottom: 8px;
 	text-align: center;
