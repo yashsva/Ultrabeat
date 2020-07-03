@@ -12,8 +12,10 @@ $(document).ready(function () {
 	$('#nextSongButton').on('click', () => { changeAudio(1) });
 	$('#prevSongButton').on('click', () => { changeAudio(-1) });
 
-	$('#audioList table tbody').on('click', 'td a.linkshowuser', playAudio);
-	//Delete Song
+	//play songs from playlist 
+	$('.playlist_list').on('click', 'li', playAudio);
+	
+	//Delete Song  (currently of no use)
 	$('#audioList table tbody').on('click', 'td a.linkdeleteuser', deleteAudio);
 
 

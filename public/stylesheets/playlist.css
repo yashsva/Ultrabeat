@@ -1,0 +1,64 @@
+.playlist_list {
+    margin: 50px;
+    padding: 0;
+    list-style: none;
+    background: linear-gradient(to right, #001d47, #3d0030);
+    box-shadow: 0px 10px 30px 3px black;
+    border-radius: 5px;
+}
+
+.playlist_entry_li {
+    color: white;
+    padding: 8px 16px;
+    /* border-bottom: 1px solid gray; */
+    box-shadow: 0px 1px 5px black;
+    box-sizing: unset;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.playlist_entry_li:hover {
+    background-color: #00346a;
+    transition: 0.5s;
+    /* transform: translateY(-5px); */
+    transform: scale(1.03, 1.1);
+}
+
+.playlist_entry_div {
+    text-shadow: 2px 4px 2px black;
+    display: inline;
+    padding: 8px 16px;
+}
+
+.playlist_entry_img {
+    width: 90px;
+    height: 55px;
+    padding: 3px 16px;
+    vertical-align: middle;
+    border-radius: 20%;
+}
+
+.playlist_entry_songName {
+    color: #e2f2ff;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+}
+
+.playlist_entry_moreOptions {
+    font-size: 30px;
+    padding: 8px 16px;
+    background-color: rgb(45, 0, 37);
+    float: right;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0px 1px 5px black;
+    border-radius: 5px;
+}
+
+.playlist_entry_moreOptions:hover {
+    background-color: black;
+    color: #00adff;
+}

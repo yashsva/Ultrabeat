@@ -7,16 +7,12 @@ html
     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
     link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/playlist.css')
   body.body
     block content
     h1= title
     h3 Bollywood Top Hits
-    #audioList
-         table(class='table table-dark table-hover')
-           thead
-            th Song
-            th Delete
-           tbody 
+    ul(class='playlist_list')
     div.footer Developed By : Yashsva Sisodiya	
     audio(controls onended="changeAudio(1);changePlayPauseIcon(0)" onpause="changePlayPauseIcon(0)" oncanplaythrough="canplaythrough();changePlayPauseIcon(1)")#audioPlayer
       source(src='' type='audio/mpeg' id='audioSource')
@@ -27,5 +23,6 @@ html
         i(id="nextSongButton" class="material-icons customAudioPlayer" ) skip_next       
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     script(src='/javascripts/customPlayer.js')
-    script(src='/javascripts/Playlist-BollywoodTop.js')    
+    script(src='/javascripts/Playlist-BollywoodTop.js')
+    include circularAudioPlayer    
     
