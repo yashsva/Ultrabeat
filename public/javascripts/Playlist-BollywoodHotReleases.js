@@ -27,7 +27,7 @@ function populateTable() {
 
 			playlistContent += "<li class='playlist_entry_li song' rel='bolly/" + this.filename + "' >";
 			playlistContent += "<span class='playlist_entry_moreOptions'>&#8942</span>"
-			playlistContent += "<img class='playlist_entry_img' src='http://localhost:3000/image/getImage/" + this.filename + "'>";
+			playlistContent += "<img class='playlist_entry_img' src='/image/getImage/" + this.filename + "'>";
 			playlistContent += "<div class='playlist_entry_div'><span class='playlist_entry_songName'>" + this.filename + "</span></div>";
 			playlistContent += "</li>";
 

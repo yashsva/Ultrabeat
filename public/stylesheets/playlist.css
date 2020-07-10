@@ -5,6 +5,8 @@
     background: linear-gradient(to right, #001d47, #3d0030);
     box-shadow: 0px 10px 30px 3px black;
     border-radius: 5px;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .playlist_entry_li {
@@ -14,34 +16,44 @@
     box-shadow: 0px 1px 5px black;
     box-sizing: unset;
     border-radius: 5px;
-    transition: 0.5s;
+    transition: all 0.5s ease;
 }
 
 .playlist_entry_li:hover {
     background-color: #00346a;
-    transition: 0.5s;
+    transition: all  0.5s ease;
     /* transform: translateY(-5px); */
     transform: scale(1.03, 1.1);
 }
 
 .playlist_entry_div {
-    text-shadow: 2px 4px 2px black;
+    
     display: inline;
     padding: 8px 16px;
 }
 
 .playlist_entry_img {
-    width: 90px;
+    width: 70px;
     height: 55px;
-    padding: 3px 16px;
+    margin: 0px 16px;
     vertical-align: middle;
-    border-radius: 20%;
+    border-radius: 10%;
+    box-shadow: 0px 0px 10px 1px black;
 }
+
 
 .playlist_entry_songName {
     color: #e2f2ff;
     font-size: 20px;
     font-family: Roboto, sans-serif;
+    vertical-align: middle;
+    transition: all 0.5s ease;
+    text-shadow: 2px 4px 2px black;
+}
+.playlist_entry_li:hover .playlist_entry_songName
+{
+    transition: all 0.5s ease;
+    color:#7bedff;
 }
 
 .playlist_entry_moreOptions {
@@ -56,9 +68,31 @@
     text-align: center;
     box-shadow: 0px 1px 5px black;
     border-radius: 5px;
+    transition: all 0.5s ease;
 }
 
 .playlist_entry_moreOptions:hover {
     background-color: black;
     color: #00adff;
+    transition: all 0.5s ease;
+    
+}
+
+@media screen and (max-width: 600px) {
+    .playlist_list {
+        margin: 20px 15px;
+    }
+    .playlist_entry_li {
+        padding: 8px 10px;
+    }
+    .playlist_entry_img {
+        width: 60px;
+        margin: 0px 5px;
+    }
+    .playlist_entry_songName {
+        font-size: 18px;
+    }
+    .playlist_entry_moreOptions {
+        padding: 5px 10px;
+    }
 }
